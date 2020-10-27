@@ -24,31 +24,44 @@ public class Main {
             num[i] = (int) (Math.random() * 9);
             System.out.println(num[i] + "  ");
         }
+
+
         System.out.println("Введите ваше число");
         Scanner numbers = new Scanner(System.in);
         int inputPlayer = numbers.nextInt();
         int[] numbersPlayer = new int[inputPlayer];
         int[] all = new int[2];
 
-        for (int i = 0; i > num[i]; i++) {
-            for (int j = 0; j > num[i]; j++) {
-                if (num[i] == numbersPlayer[j]) {
-                    if (i == j) bull=+1;
-                    else cows=+1;
-                    System.out.println(bull);
-                    System.out.println(cows);
+        boolean found = false;
+        for (int i = 0; i <= num.length; i++) {
+            if (inputPlayer == num[i]) {
+                if ( num[0]== inputPlayer) {
+
+                    found = true;
+                    break;
                 }
             }
         }
+        if (found) {
+            System.out.println("Вы отгадали число");
+            bull++;
+        } else {
+            System.out.println("К сожалению это не то число, попробуйте еще раз!");
+            System.out.println("Введите ваше число");
+
+        }
+
+
         all[0] = cows;
         all[1] = bull;
-        for (int i : all) {
-            System.out.print(i);
-        }
+
         System.out.println(all[0] + "Cows ");
         System.out.println(all[1] + "Bulls ");
     }
 }
+//        for (int i : all) {
+//            System.out.print(i);
+
 //        for (int i : num) {
 //            System.out.print(i + ", ");
 //        }

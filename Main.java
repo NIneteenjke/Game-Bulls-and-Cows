@@ -26,31 +26,42 @@ public class Main {
         }
 
 
-        System.out.println("Введите ваше число");
-        Scanner numbers = new Scanner(System.in);
-        int inputPlayer = numbers.nextInt();
-        int[] numbersPlayer = new int[inputPlayer];
+//        System.out.println("Введите ваше число");
+//        Scanner numbers = new Scanner(System.in);
+//        int inputPlayer = numbers.nextInt();
+//        int[] numbersPlayer = new int[inputPlayer];
         int[] all = new int[2];
+        boolean tryToWin = true;
 
-        boolean found = false;
-        for (int i = 0; i <= num.length; i++) {
-            if (inputPlayer == num[i]) {
-                if ( num[0]== inputPlayer) {
+        while (tryToWin) {
+            boolean found = false;
+            for (int i = 0; tryToWin = true; i++) {
 
+                System.out.println("Введите ваше число");
+                Scanner numbers = new Scanner(System.in);
+                int inputPlayer = numbers.nextInt();
+                int[] numbersPlayer = new int[inputPlayer];
+                if (inputPlayer == num[i]) {
+                    System.out.println("Вышел");
+                }
+                if (num[i] == inputPlayer) {
+                    System.out.println("Как зашел");
                     found = true;
                     break;
+
                 }
+
+            }
+            if (found) {
+                System.out.println("Вы отгадали число");
+                bull++;
+                tryToWin = false;
+
+            }else {
+                System.out.println("К сожалению это не то число, попробуйте еще раз!");
+                System.out.println("Введите еще раз!");
             }
         }
-        if (found) {
-            System.out.println("Вы отгадали число");
-            bull++;
-        } else {
-            System.out.println("К сожалению это не то число, попробуйте еще раз!");
-            System.out.println("Введите ваше число");
-
-        }
-
 
         all[0] = cows;
         all[1] = bull;
@@ -59,26 +70,7 @@ public class Main {
         System.out.println(all[1] + "Bulls ");
     }
 }
-//        for (int i : all) {
-//            System.out.print(i);
 
-//        for (int i : num) {
-//            System.out.print(i + ", ");
-//        }
-
-//            for (int i = 0; i <num.length; i++)
-//            {
-//                for (int j = i + 1; j < num.length; j++)
-//                {
-//                    if (num[i] > num[j])
-//                    {
-//                        int rez = num[i];
-//                        num[i] = num[j];
-//                        num[j] = rez;
-//                    }
-//                }
-//                System.out.print(num[i] + " ");
-//            }
 
 
 

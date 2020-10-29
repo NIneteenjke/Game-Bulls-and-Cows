@@ -25,42 +25,30 @@ public class Main {
             System.out.println(num[i] + "  ");
         }
 
-
-//        System.out.println("Введите ваше число");
-//        Scanner numbers = new Scanner(System.in);
-//        int inputPlayer = numbers.nextInt();
-//        int[] numbersPlayer = new int[inputPlayer];
         int[] all = new int[2];
         boolean tryToWin = true;
 
         while (tryToWin) {
-            boolean found = false;
-            for (int i = 0; tryToWin = true; i++) {
-
+            //boolean found = false;
+            for (int i = 0; i < num.length; i++) {
                 System.out.println("Введите ваше число");
                 Scanner numbers = new Scanner(System.in);
                 int inputPlayer = numbers.nextInt();
                 int[] numbersPlayer = new int[inputPlayer];
                 if (inputPlayer == num[i]) {
-                    System.out.println("Вышел");
-                }
-                if (num[i] == inputPlayer) {
-                    System.out.println("Как зашел");
-                    found = true;
+                    System.out.println("Вы отгадали число");
+                    //found = true;
+                    bull++;
+                    tryToWin = false;
                     break;
-
+                } else {
+                    System.out.println("К сожалению это не то число, попробуйте еще раз!");
+                    i++;
                 }
 
-            }
-            if (found) {
-                System.out.println("Вы отгадали число");
-                bull++;
-                tryToWin = false;
 
-            }else {
-                System.out.println("К сожалению это не то число, попробуйте еще раз!");
-                System.out.println("Введите еще раз!");
             }
+
         }
 
         all[0] = cows;
